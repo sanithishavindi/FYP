@@ -49,3 +49,4 @@ export const Loginsignup = () => {
     </div>
   )
 }
+export default Loginsignup;
