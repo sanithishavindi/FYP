@@ -3,11 +3,11 @@ import React from 'react'
 function Navbar() {
   return (
     <div>
-      <div className='navbar'>
+      {/* <div className='navbar'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-        </div>
+        </div> */}
     </div>
   )
 }
