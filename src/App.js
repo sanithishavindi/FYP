@@ -15,9 +15,7 @@ function App() {
     // </div>
     
     <Routes>
-      
         <Route path="/" element={<Login />} />
-        <Outlet/>
         {/* <Route path="/Navbar" element={<Navbar />} /> */}
 {/*       
       <Route path="/Login" element={<Loginsignup />} />  
