@@ -13,8 +13,7 @@ export const Signup = () => {  // Rename component to Login
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignup = () => {
-    // Perform login logic here
-    // For now, just navigate to '/Navbar'
+    
     navigate('/Login');
   };
 
