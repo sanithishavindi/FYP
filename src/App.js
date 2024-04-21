@@ -13,7 +13,6 @@ function App() {
   return (
     <div className='App'>
 
-      <Router>
         <div>
           <nav>
             <ul>
@@ -27,9 +26,6 @@ function App() {
 
           </Routes>
         </div>
-
-      </Router>
-
     </div>     
   );
   
