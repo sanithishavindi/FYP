@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Link,Router } from 'react-router-dom';
 import './App.css';
 import { Login } from './Components/LoginSignup/Login';
+import { Signup } from './Components/LoginSignup/Signup';
 //import { Navbar } from './Components/Navbar/Navbar';
 
 
@@ -10,19 +11,28 @@ function App() {
   
 
   return (
-    // <div>
-    //  <Loginsignup/>
-    // </div>
+    <div className='App'>
+
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li><Link to="/">Signup</Link></li>
+              <li><Link to="/Login">Login</Link></li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path="/" element={<Signup/>}/>
+            <Route path="/Login" element={<Login/>}/>
+
+          </Routes>
+        </div>
+
+      </Router>
+
+    </div>
     
-    <Routes>
-        <Route path="/" element={<Login />} />
-        {/* <Route path="/Navbar" element={<Navbar />} /> */}
-{/*       
-      <Route path="/Login" element={<Loginsignup />} />  
-      <Route path="/sign Up" element={<Loginsignup />} />
-          
-       */}
-    </Routes>
+   
     
     
   );
