@@ -13,26 +13,11 @@ function App() {
 
   return (
     <div className='App'>
-
-        <div>
-          {/* <nav>
-            <ul>
-              <li><Link to="/">Signup</Link></li>
-              <li><Link to="/Login">Login</Link></li>
-            </ul>
-          </nav> */}
+          <Navbar/>
           <Routes>
             <Route path="/" element={<Signup/>}/>
             <Route path="/Login" element={<Login/>}/>
-            <Route path="/Navbar" element={<Navbar/>}/>
           </Routes>
-          {/* <Router>
-            <Navbar />
-            <Switch>
-              <Route path='/Navbar' />
-            </Switch>
-          </Router> */}
-        </div>
     </div>     
   );
   
