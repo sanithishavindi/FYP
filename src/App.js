@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Login } from './Components/LoginSignup/Login';
 import { Signup } from './Components/LoginSignup/Signup';
-import  Navbar  from './Components/Navbar/Navbar';
+import Home from './Pages/Home'
+import Doctor from './Pages/Doctors';
+// import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
 
 
@@ -13,10 +15,12 @@ function App() {
 
   return (
     <div className='App'>
-          <Navbar/>
+          {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Signup/>}/>
             <Route path="/Login" element={<Login/>}/>
+            <Route path="/Home" element={<Home/>}/>
+            <Route path="/Doctor" element={<Doctor/>}/>
           </Routes>
     </div>     
   );

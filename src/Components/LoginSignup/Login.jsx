@@ -14,7 +14,7 @@ export const Login = () => {  // Rename component to Login
   const handleLogin = () => {
     // Perform login logic here
     // For now, just navigate to '/Navbar'
-    navigate('/Navbar');
+    navigate('/Home');
   };
 
   return (

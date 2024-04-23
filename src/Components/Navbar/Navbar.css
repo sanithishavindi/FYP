@@ -1,0 +1,7 @@
+.navbar{
+    background-color: aliceblue;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    left: -100%;
+}

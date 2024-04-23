@@ -7,8 +7,8 @@ function Navbar() {
     <div>
       <div className='navbar'> 
         <ul>
-          <li><Link to="/"><img src = {email} alt='Email'/>Signup</Link></li>
-          <li><Link to="/Login">Login</Link></li>
+          <li><Link to="/"><img src = {email} alt='Email'/>Dashboard</Link></li>
+          <li><Link to="/Doctor">Doctor</Link></li>
         </ul>
         </div>
     </div>
