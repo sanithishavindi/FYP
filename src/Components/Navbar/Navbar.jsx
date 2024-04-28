@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import email from '../Assests/email.png'
+import './Navbar.css';
 
 function Navbar() {
   return (
@@ -14,6 +15,7 @@ function Navbar() {
           {/* <li><Link to="/Doctor">Settings</Link></li> */}
         </ul>
         </div>
+        {/* <li key={key} onClick={()=>{window.location.pathname = val.Link}}></li> */}
     </div>
   )
 }
