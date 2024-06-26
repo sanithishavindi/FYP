@@ -6,6 +6,9 @@ function Specialization() {
       <div className='Specialization'>
         <h1>Specialization</h1>
         </div>
+        <div class="box-border hover:box content">
+          
+        </div>
     </div>
   )
 }
