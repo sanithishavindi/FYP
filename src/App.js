@@ -13,10 +13,9 @@ import Layout from './Components/Layout';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
 
 
+
 function App() {
   
-  
-
   return (
     <div className='App'>
           {/* <Navbar/> */}
@@ -33,8 +32,12 @@ function App() {
             </Route>
         
           </Routes>
+
           
-    </div>     
+          
+    </div>   
+    
+    
   );
   
 }
