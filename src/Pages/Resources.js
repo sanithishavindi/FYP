@@ -7,7 +7,10 @@ function Resources() {
     <div>
          
         <div className='Resources'>
-        <h1>doctor</h1>
+        <h1 className='text-3xl' >Resources</h1>
+        </div>
+        <div>
+          
         </div>
     </div>
   )
