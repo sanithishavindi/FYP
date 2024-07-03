@@ -10,6 +10,7 @@ function Resources() {
         <h1 className='text-3xl' >Resources</h1>
         </div>
         <div className='my-10'>
+        <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mx-80  ">
         1.	Defibrillator<br></br>
 2.	Suction Machine<br></br>
 3.	Emergency Stretchers<br></br>
@@ -22,6 +23,8 @@ function Resources() {
 10.	Patient Monitors<br></br>
 11.	syringe pump<br></br>
 12.	Cardiac monitor 
+        </div>
+        
 
         </div>
     </div>
