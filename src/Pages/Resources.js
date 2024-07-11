@@ -12,7 +12,7 @@ import CommentIcon from '@mui/icons-material/Comment';
 function Resources() {
   const [checked, setChecked] = React.useState([0]);
 
-  const handleToggle = (value: number) => () => {
+  const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
@@ -32,7 +32,7 @@ function Resources() {
         <div className='Resources'>
         <h1 className='text-3xl' >Resources</h1>
         </div>
-        <div className='my-10'>
+        {/* <div className='my-10'>
         <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-left w-72 mx-80  ">
         1.	Defibrillator<br></br>
 2.	Suction Machine<br></br>
@@ -51,10 +51,11 @@ function Resources() {
         Suction Machine</div>
         
 
-        </div>
-        <div>
+        </div> */}<br></br>
+
+        <div className='mx-80'>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
+      {['Defibrillator','Suction Machine','Emergency Stretchers','Stethoscope','Cervical Collar','Cervical Collar','intubation cannula','Ventilator','ECG Machine','Surgical Masks, Surgical Gloves'].map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (
@@ -77,13 +78,15 @@ function Resources() {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={`${value} `} />
             </ListItemButton>
           </ListItem>
+          
         );
       })}
     </List>
         </div>
+        
     </div>
   )
 }
