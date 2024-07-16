@@ -1,10 +1,13 @@
 import React from 'react'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+
+// import DengueFever from './DengueFever';
+import { Link } from 'react-router-dom';
 
 const Specialization = () => {
   // const specializations = [
@@ -31,7 +34,7 @@ const Specialization = () => {
           <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
+        <Link to="/DengueFever">View Resources</Link>
       </button>
           </div>
           
@@ -100,7 +103,7 @@ const Specialization = () => {
         ))}
       </div>
     </div> */}
-    <div className='mx-80'>
+    {/* <div className='mx-80'>
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         // sx={{ height: 140 }}
@@ -122,7 +125,7 @@ const Specialization = () => {
       </CardActions>
     </Card>
     </div>
-    
+     */}
     </div>
     
   )

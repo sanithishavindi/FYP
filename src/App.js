@@ -8,6 +8,7 @@ import Doctor from './Pages/Doctors';
 import Resources from './Pages/Resources';
 import Specialization from './Pages/Specialization';
 import Layout from './Components/Layout';
+import DengueFever from './Pages/DengueFever';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -30,6 +31,8 @@ function App() {
             <Route path="/Specialization" element={<Specialization/>}/>
             
             </Route>
+
+            <Route path="/DengueFever" element={<DengueFever/>}/>
         
           </Routes>
 
