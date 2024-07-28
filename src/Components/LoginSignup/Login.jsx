@@ -4,28 +4,34 @@ import './Loginsignup.css';
 
 import email from '../Assests/email.png';
 import password from '../Assests/password.png';
-import { auth } from "firebase/auth";
-// import { auth } from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import Firebase from '../../firebase';
 
-export const Login = (e) => {  // Rename component to Login
+
+
+export const Login = () => {  // Rename component to Login
 
   const navigate = useNavigate();
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
-  signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    
 
-  const handleLogin = () => {
+  const firebase = new Firebase();
+
+
+  const handleLogin = async () => {
     // Perform login logic here
     // For now, just navigate to '/Navbar'
-    navigate('/Home');
+    // navigate('/Home');
+
+    console.log(emailValue, passwordValue);
+
+    const user= await firebase.userSignInWithEmailAndPassword(emailValue, passwordValue);
+    if(user){
+      navigate('/Home');
+    }
+    else{
+      console.log('error');
+    }
+
   };
 
   return (
