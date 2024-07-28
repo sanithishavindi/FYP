@@ -4,12 +4,23 @@ import './Loginsignup.css';
 
 import email from '../Assests/email.png';
 import password from '../Assests/password.png';
+import { auth } from "firebase/auth";
+// import { auth } from "../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-export const Login = () => {  // Rename component to Login
+export const Login = (e) => {  // Rename component to Login
 
   const navigate = useNavigate();
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+  signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
 
   const handleLogin = () => {
     // Perform login logic here
