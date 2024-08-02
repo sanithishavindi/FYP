@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 // import Avatar from '@mui/material/Avatar';
 
-function DengueFever  ()  {
+function CardiacArrest  ()  {
 
   const [checked, setChecked] = React.useState([1]);
 
@@ -29,12 +29,12 @@ function DengueFever  ()  {
   return (
     <div>
         <div className='Dengue'>
-        <h1>Dengue Fever</h1>
+        <h1>Cardiac Arrest</h1>
         </div><br></br>
        
        <div className='mx-80'>
 
-       <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+       <List dense sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}>
       {["ECG Monitor","infusion pump","crash cart","syringe pump"].map((value) => {
         const labelId = `checkbox-list-secondary-label-${value}`;
         return (
@@ -70,4 +70,4 @@ function DengueFever  ()  {
   )
 }
 
-export default DengueFever
+export default CardiacArrest

@@ -39,10 +39,10 @@ const Specialization = () => {
           </div>
           
       <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-        <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
-        <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
+        <h3 className="mb-2 text-lg font-semibold">Cardiac Arrest</h3>
+        <p className="mb-4 text-gray-700">Cardiac arrest occurs when the heart suddenly and unexpectedly stops pumping.If this happens, blood stops flowing to the brain. </p>
         <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
+        <Link to="/CardiacArrest">View Resources</Link>
         </button>
       </div>
 

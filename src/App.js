@@ -9,6 +9,7 @@ import Resources from './Pages/Resources';
 import Specialization from './Pages/Specialization';
 import Layout from './Components/Layout';
 import DengueFever from './Pages/DengueFever';
+import CardiacArrest from './Pages/CardiacArrest';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -33,6 +34,7 @@ function App() {
             </Route>
 
             <Route path="/DengueFever" element={<DengueFever/>}/>
+            <Route path="/CardiacArrest" element={<CardiacArrest/>}/>
         
           </Routes>
 
