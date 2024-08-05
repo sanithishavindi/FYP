@@ -4,6 +4,7 @@ import './Loginsignup.css';
 
 import email from '../Assests/email.png';
 import password from '../Assests/password.png';
+import Firebase from '../../firebase';
 
 export const Signup = () => {  // Rename component to Login
 
@@ -12,9 +13,24 @@ export const Signup = () => {  // Rename component to Login
   const [passwordValue, setPasswordValue] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     
-    navigate('/Login');
+    if (passwordValue !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }else{
+      
+    const firebase = new Firebase();
+    const result = await firebase.userSignUpWithEmailAndPassword(emailValue, passwordValue);
+    if (result) {
+      navigate('/Login');
+    } else {
+      alert("Error signing up. Please try again.");
+    }
+
+    }
+
+    
   };
 
   return (

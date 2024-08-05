@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {  createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDstWGn7NOz_nH3yccMFsbgXNj4dEplSkU",
@@ -19,6 +21,17 @@ class Firebase {
     this.firestore = getFirestore();
 
   }
+
+  userSignUpWithEmailAndPassword = async (email, password) => {
+    try {
+      const user = await createUserWithEmailAndPassword(this.auth, email, password);
+      console.log(user);
+      return true;
+    } catch (error) {
+      console.error("Error signing up:", error);
+      return false;
+    }
+  };
 
   userSignInWithEmailAndPassword = async (email, password) => {
 
