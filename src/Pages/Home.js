@@ -18,6 +18,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -57,6 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
+
 
 function Home(){
 
@@ -101,7 +104,7 @@ function Home(){
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Sign Out</MenuItem>
     </Menu>
   );
 
@@ -156,9 +159,10 @@ function Home(){
       </MenuItem>
     </Menu>
   );
+  
 
   return (
-    
+
     <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static">
       <Toolbar>
@@ -177,7 +181,7 @@ function Home(){
           component="div"
           sx={{ display: { xs: 'none', sm: 'block' } }}
         >
-          MUI
+          Hospital
         </Typography>
         <Search>
           <SearchIconWrapper>
@@ -233,6 +237,8 @@ function Home(){
     {renderMobileMenu}
     {renderMenu}
   </Box>
+
+  
   );
 }
 
