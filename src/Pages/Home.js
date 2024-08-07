@@ -18,7 +18,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { DataGrid } from '@mui/x-data-grid';
-
+import { LineChart } from '@mui/x-charts/LineChart';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -102,6 +102,18 @@ const rows = [
   { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
   { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+];
+
+const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
+const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
+const xLabels = [
+  'Page A',
+  'Page B',
+  'Page C',
+  'Page D',
+  'Page E',
+  'Page F',
+  'Page G',
 ];
 
 
@@ -286,8 +298,8 @@ function Home(){
       {renderMenu}
     </Box>
 </div>
-
-<div >
+<div className='mx-80'>
+<div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mr-80 w-full'>
 
 <PieChart 
       series={[
@@ -306,9 +318,24 @@ function Home(){
       }}
     />
 </div>
-<br></br>
+</div>
 
 <div className='mx-80'>
+  <div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mr-80 w-auto'>
+<LineChart
+      width={500}
+      height={300}
+      series={[
+        { data: pData, label: 'pv' },
+        { data: uData, label: 'uv' },
+      ]}
+      xAxis={[{ scaleType: 'point', data: xLabels }]}
+    />
+</div>
+</div>
+
+<div className='mx-80'>
+  <div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mr-80 w-full'>
 <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={rows}
@@ -322,7 +349,10 @@ function Home(){
         checkboxSelection
       />
     </div>
+    </div>
 </div>
+
+
 </>
     
  
