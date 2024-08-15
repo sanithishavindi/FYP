@@ -224,7 +224,7 @@ function Home(){
     <div className='topbar'>
 
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{ backgroundColor:"black"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -298,27 +298,26 @@ function Home(){
       {renderMenu}
     </Box>
 </div>
-<div className='mx-80'>
-<div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mr-80 w-full'>
+
+<div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md flex ml-80 w-96'>
 
 <PieChart 
       series={[
         
         {
           data: data2,
-          cx: 500,
-          cy: 200,
+          
           innerRadius: 40,
           outerRadius: 80,
         },
       ]}
       height={300}
       slotProps={{
-        legend: { hidden: true },
+        legend: { hidden: false },
       }}
     />
 </div>
-</div>
+
 
 <div className='mx-80'>
   <div className='bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64 mr-80 w-auto'>
