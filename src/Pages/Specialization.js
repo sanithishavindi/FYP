@@ -47,7 +47,7 @@ const Specialization = () => {
       </div>
 
       <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Chest Pain</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
@@ -55,7 +55,7 @@ const Specialization = () => {
           </div>
 
           <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Allergic Reaction</h3>
           <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
           <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
@@ -63,7 +63,7 @@ const Specialization = () => {
          </div>
 
          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Earache/Toothache</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
@@ -71,7 +71,7 @@ const Specialization = () => {
           </div>
 
           <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Short of breathing</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
@@ -79,7 +79,7 @@ const Specialization = () => {
           </div>
       
           <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Poisoning</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
@@ -87,7 +87,39 @@ const Specialization = () => {
           </div>
 
           <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
+          <h3 className="mb-2 text-lg font-semibold">Traumatic injury</h3>
+      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
+      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
+        View Resources
+      </button>
+          </div>
+
+          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+          <h3 className="mb-2 text-lg font-semibold">Dislocation</h3>
+      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
+      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
+        View Resources
+      </button>
+          </div>
+
+          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+          <h3 className="mb-2 text-lg font-semibold">Fracture</h3>
+      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
+      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
+        View Resources
+      </button>
+          </div>
+
+          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+          <h3 className="mb-2 text-lg font-semibold">Snake Bite</h3>
+      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
+      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
+        View Resources
+      </button>
+          </div>
+
+          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+          <h3 className="mb-2 text-lg font-semibold">Burns</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         View Resources
