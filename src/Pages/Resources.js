@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
+import Button from '@mui/material/Button';
 
 
 function Resources() {
@@ -86,7 +87,12 @@ function Resources() {
       })}
     </List>
         </div>
-        
+        <br></br>
+        <div>
+        <Button variant="contained" disableElevation>
+      Allocate Resources
+    </Button>
+      </div>  
     </div>
   )
 }
