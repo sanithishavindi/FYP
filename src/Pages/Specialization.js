@@ -50,7 +50,7 @@ const Specialization = () => {
           <h3 className="mb-2 text-lg font-semibold">Chest Pain</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
+        <Link to="/ChestPain">View Resources</Link>
       </button>
           </div>
 
