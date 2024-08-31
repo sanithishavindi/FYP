@@ -27,9 +27,11 @@ export const Login = () => {  // Rename component to Login
     const user= await firebase.userSignInWithEmailAndPassword(emailValue, passwordValue);
     if(user){
       navigate('/Home');
+      alert("successfully loged in");
     }
     else{
       console.log('error');
+      alert("Try again");
     }
 
   };

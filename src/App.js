@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Login } from './Components/LoginSignup/Login';
-import { Signup } from './Components/LoginSignup/Signup';
+// import { Signup } from './Components/LoginSignup/Signup';
 import Home from './Pages/Home'
 import Doctor from './Pages/Doctors';
 import Resources from './Pages/Resources';
@@ -11,6 +11,7 @@ import Layout from './Components/Layout';
 import DengueFever from './Pages/DengueFever';
 import CardiacArrest from './Pages/CardiacArrest';
 import ChestPain from './Pages/ChestPain';
+import Req from './Pages/Req';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -23,14 +24,15 @@ function App() {
     <div className='App'>
           {/* <Navbar/> */}
           <Routes>
-            <Route path="/" element={<Signup/>}/>
-            <Route path="/Login" element={<Login/>}/>
+            {/* <Route path="/" element={<Signup/>}/> */}
+            <Route path="/" element={<Login/>}/>
             
             <Route element={<Layout/>}>
             <Route path="/Home" element={<Home/>}/>
             <Route path="/Doctor" element={<Doctor/>}/>
             <Route path="/Resources" element={<Resources/>}/>
             <Route path="/Specialization" element={<Specialization/>}/>
+            <Route path="/Req" element={<Req/>}/>
             
             </Route>
 
