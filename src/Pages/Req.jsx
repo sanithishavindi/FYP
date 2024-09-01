@@ -11,7 +11,7 @@ export default function Req ()  {
         
         const firebase = new Firebase();
 
-        const ref = collection(firebase.firestore, 'Msg');
+        const ref = collection(firebase.firestore, 'Request');
 
         const unsubscribe = onSnapshot(ref, (snapshot) => {
             const newRequests = snapshot.docs.map(doc => ({
