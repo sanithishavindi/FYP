@@ -1,99 +1,67 @@
-import React from 'react'
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
-import Button from '@mui/material/Button';
+import React, { useEffect, useState } from 'react';
+import Firebase from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
 
 
 function Resources() {
-  const [checked, setChecked] = React.useState([0]);
+  
+  const [resources, setResources] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+   
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+    useEffect(() => {
 
-    setChecked(newChecked);
-  };
+      const firebase = new Firebase();
+
+        async function fetchResources() {
+          const ref = collection(firebase.firestore, 'Resources');
+          const querySnapshot = await getDocs(ref);
+          const resourcesData = querySnapshot.docs.map(doc => doc.data());
+          setResources(resourcesData);
+        }
+    
+        fetchResources();
+      }, []);
+
+      const filteredResources = resources.filter(resource =>
+        resource.healthIssue.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
   return (
-    
-    <div>
-         
-        <div className='Resources mt-32'>
-        <h1 className='text-3xl' >Resources</h1>
-        </div>
-        {/* <div className='my-10'>
-        <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-left w-72 mx-80  ">
-        1.	Defibrillator<br></br>
-2.	Suction Machine<br></br>
-3.	Emergency Stretchers<br></br>
-4.	Stethoscope<br></br>
-5.	Cervical Collar<br></br>
-6.	intubation cannula<br></br>
-7.	Ventilators<br></br>
-8.	ECG Machine<br></br>
-9.	Surgical Masks, Surgical Gloves<br></br>
-10.	Patient Monitors<br></br>
-11.	syringe pump<br></br>
-12.	Cardiac monitor 
-        </div>
-        <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-left w-72 mx-80  ">
-        Suction Machine</div>
-        
+    <div className='mt-32 mx-80 ' >
+ <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Resources for Health Issues</h1>
+      
+      <input
+        type="text"
+        placeholder="Search health issues..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{
+          width: '100%',
+          padding: '10px',
+          marginBottom: '20px',
+          borderRadius: '5px',
+          border: '1px solid #ccc',
+        }}
+      />
 
-        </div> */}<br></br>
-
-        <div className='mx-80'>
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {['Defibrillator','Suction Machine','Emergency Stretchers','Stethoscope','Cervical Collar','Cervical Collar','intubation cannula','Ventilator','ECG Machine','Surgical Masks, Surgical Gloves'].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
-
-        return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`${value} `} />
-            </ListItemButton>
-          </ListItem>
-          
-        );
-      })}
-    </List>
+      {filteredResources.map((resource, index) => (
+        <div key={index} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+          <h2 style={{ color: '#333' }}>{resource.healthIssue}</h2>
+          <ul style={{ listStyleType: 'disc', marginLeft: '20px', color: '#555', textAlign: 'left' }}>
+            {resource.resources.map((item, idx) => (
+              <li key={idx} style={{ marginBottom: '5px' }}>{item}</li>
+            ))}
+          </ul>
         </div>
-        <br></br>
-        <div>
-        <Button variant="contained" disableElevation>
-      Allocate Resources
-    </Button>
-      </div>  
+      ))}
     </div>
+
+    </div>
+    
   )
 }
 

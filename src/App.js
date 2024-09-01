@@ -12,6 +12,7 @@ import DengueFever from './Pages/DengueFever';
 import CardiacArrest from './Pages/CardiacArrest';
 import ChestPain from './Pages/ChestPain';
 import Req from './Pages/Req';
+import Report from './Pages/Report';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/Resources" element={<Resources/>}/>
             <Route path="/Specialization" element={<Specialization/>}/>
             <Route path="/Req" element={<Req/>}/>
+            <Route path="/Report" element={<Report/>}/>
             
             </Route>
 
