@@ -2,7 +2,7 @@ import React from 'react'
 
 const ChestPain = () => {
   return (
-    <div>ChestPain</div>
+    <div className='mt-32'>ChestPain</div>
   )
 }
 

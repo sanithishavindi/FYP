@@ -28,7 +28,7 @@ function DengueFever  ()  {
 
   return (
     <div>
-        <div className='Dengue'>
+        <div className='Dengue mt-32'>
         <h1>Dengue Fever</h1>
         </div><br></br>
        

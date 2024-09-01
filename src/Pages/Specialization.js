@@ -8,6 +8,7 @@ import React from 'react'
 
 // import DengueFever from './DengueFever';
 import { Link } from 'react-router-dom';
+import "./specialization.css";
 
 const Specialization = () => {
   // const specializations = [
@@ -18,10 +19,10 @@ const Specialization = () => {
 
   return (
     <div>
-      <div className='Specialization'>
-        <h1>Specialization</h1>
+      <div className='specialization-container mt-32'>
+        <h1 className='text-5xl font-bold text-center mb-16'><b>Specialization</b></h1>
         </div>
-        <div className="mx-80 grid grid-cols-4 gap-x-64">
+        <div className=" mx-80 grid grid-cols-4 gap-x-64">
           
             {/* <div>
             <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
@@ -30,7 +31,7 @@ const Specialization = () => {
         View Resources
       </button>
             </div> */}
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+          <div className="specialization-card bg-white border border-gray-300 rounded-lg p-6  shadow-md hover:shadow-lg transform transition duration-300 ease-in-out w-64">
           <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
@@ -38,15 +39,15 @@ const Specialization = () => {
       </button>
           </div>
           
-      <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+      <div className="specialization-card bg-white border border-gray-300 rounded-lg p-4  shadow-md hover:shadow-lg transform transition duration-300 ease-in-out w-64 ">
         <h3 className="mb-2 text-lg font-semibold">Cardiac Arrest</h3>
-        <p className="mb-4 text-gray-700">Cardiac arrest occurs when the heart suddenly and unexpectedly stops pumping.If this happens, blood stops flowing to the brain. </p>
+        <p className="mb-4 text-gray-700 ">Cardiac arrest occurs when the heart suddenly and unexpectedly stops pumping.If this happens, blood stops flowing to the brain. </p>
         <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
         <Link to="/CardiacArrest">View Resources</Link>
         </button>
       </div>
 
-      <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
+      <div className="specialization-card bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
           <h3 className="mb-2 text-lg font-semibold">Chest Pain</h3>
       <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
       <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">

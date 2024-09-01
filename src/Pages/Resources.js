@@ -30,7 +30,7 @@ function Resources() {
     
     <div>
          
-        <div className='Resources'>
+        <div className='Resources mt-32'>
         <h1 className='text-3xl' >Resources</h1>
         </div>
         {/* <div className='my-10'>

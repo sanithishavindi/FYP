@@ -8,7 +8,7 @@ function Doctor() {
     
     <div>
          
-        <div className='Doctor'>
+        <div className='Doctor mt-32'>
         <h1 className='font-normal hover:font-bold text-3xl my-5'>Doctor Details</h1>
         </div>
        <div className='mx-80 my-10 grid grid-cols-4 gap-x-64'>

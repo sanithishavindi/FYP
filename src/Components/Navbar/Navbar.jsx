@@ -5,7 +5,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import HomeIcon from '@mui/icons-material/Home';
-
+import RequestQuoteIcon from '@mui/icons-material/RequestQuote';
 
 function Navbar() {
   return (
@@ -16,7 +16,7 @@ function Navbar() {
           <li><Link to="/Doctor"><LocalHospitalIcon/>Doctor</Link></li>
           <li><Link to="/Resources"><MedicalServicesIcon/>Resouces</Link></li>
           <li><Link to="/Specialization"><ManageAccountsIcon/>Specialization</Link></li>
-          <li><Link to="/Req"><ManageAccountsIcon/>Request</Link></li>
+          <li><Link to="/Req"><RequestQuoteIcon/>Request</Link></li>
           {/* <li><Link to="/Doctor">Settings</Link></li> */}
         </ul>
         </div>

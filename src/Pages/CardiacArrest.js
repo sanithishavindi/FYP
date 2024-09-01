@@ -28,7 +28,7 @@ function CardiacArrest  ()  {
 
   return (
     <div>
-        <div className='Dengue'>
+        <div className='Dengue mt-32'>
         <h1>Cardiac Arrest</h1>
         </div><br></br>
        

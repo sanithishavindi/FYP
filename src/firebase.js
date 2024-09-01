@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import {  createUserWithEmailAndPassword } from "firebase/auth";
 
 
@@ -47,6 +47,17 @@ class Firebase {
     }
 
 
+  };
+
+  signOutUser = async () => {
+    try {
+      await signOut(this.auth);
+      console.log("User signed out successfully");
+      return true;
+    } catch (error) {
+      console.error("Error signing out:", error);
+      return false;
+    }
   };
 }
 
