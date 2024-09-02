@@ -18,6 +18,10 @@ import Traumatic from './Pages/Special/Traumatic';
 import Sob from './Pages/Special/Sob';
 import Req from './Pages/Req';
 import Report from './Pages/Report';
+import Dislocation from './Pages/Special/Dislocation';
+import Fracture from './Pages/Special/Fracture';
+import SnakeBite from './Pages/Special/SnakeBite';
+import Burns from './Pages/Special/Burns';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -51,6 +55,10 @@ function App() {
             <Route path="/Sob" element={<Sob/>}/>
             <Route path="/Poisoning" element={<Poisoning/>}/>
             <Route path="/Traumatic" element={<Traumatic/>}/>
+            <Route path="/Dislocation" element={<Dislocation/>}/>
+            <Route path="/Fracture" element={<Fracture/>}/>
+            <Route path="/SnakeBite" element={<SnakeBite/>}/>
+            <Route path="/Burns" element={<Burns/>}/>
         
           </Routes>
 

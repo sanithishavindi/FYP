@@ -14,10 +14,10 @@ const Specialization = () => {
     { title: 'Shortness of Breath', description: 'Shortness of breath can be a symptom of underlying heart or lung conditions.', link: "/Sob" },
     { title: 'Poisoning', description: 'Poisoning occurs when harmful substances are ingested, inhaled, or come into contact with the skin.', link: "/Poisoning" },
     { title: 'Traumatic Injury', description: 'Traumatic injuries are sudden physical injuries that require immediate medical attention.', link: "/Traumatic" },
-    { title: 'Dislocation', description: 'A dislocation is an injury where a bone is forced out of its joint.', link: "#" },
-    { title: 'Fracture', description: 'A fracture is a break in the bone, often caused by trauma or injury.', link: "#" },
-    { title: 'Snake Bite', description: 'A snake bite can cause serious injury or illness, depending on the type of snake.', link: "#" },
-    { title: 'Burns', description: 'Burns are tissue damage caused by heat, chemicals, electricity, or radiation.', link: "#" },
+    { title: 'Dislocation', description: 'A dislocation is an injury where a bone is forced out of its joint.', link: "/Dislocation" },
+    { title: 'Fracture', description: 'A fracture is a break in the bone, often caused by trauma or injury.', link: "/Fracture" },
+    { title: 'Snake Bite', description: 'A snake bite can cause serious injury or illness, depending on the type of snake.', link: "/SnakeBite" },
+    { title: 'Burns', description: 'Burns are tissue damage caused by heat, chemicals, electricity, or radiation.', link: "/Burns" },
   ];
   
 

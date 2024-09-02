@@ -45,7 +45,8 @@ export default function Req ()  {
 
     const getMergedData = () => {
       return requests.map(request => {
-        const matchingResource = resources.find(resource => resource.special === request.special);
+        const matchingResource = resources.find(resource => resource.healthIssue === request.special);
+        console.log(matchingResource);
         return {
           ...request,
           healthIssue: matchingResource?.healthIssue || 'N/A',

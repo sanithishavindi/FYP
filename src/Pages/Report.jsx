@@ -39,8 +39,12 @@ export default function Report  ()  {
     
         // Function to update the reports state based on requests and resources
         const updateReports = (requests, resources) => {
+          console.log(requests);
+          
           const mergedData = requests.map(request => {
-            const matchingResource = resources.find(resource => resource.special === request.special);
+            const matchingResource = resources.find(resource => resource.healthIssue === request.specialization);
+            console.log(matchingResource);
+            
             return {
               ...request,
               healthIssue: matchingResource?.healthIssue || 'N/A',
