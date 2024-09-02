@@ -12,6 +12,10 @@ import DengueFever from './Pages/Special/DengueFever';
 import CardiacArrest from './Pages/Special/CardiacArrest';
 import ChestPain from './Pages/Special/ChestPain';
 import AllergicReaction from './Pages/Special/AllergicReaction';
+import Earace from './Pages/Special/Earace';
+import Poisoning from './Pages/Special/Poisoning';
+import Traumatic from './Pages/Special/Traumatic';
+import Sob from './Pages/Special/Sob';
 import Req from './Pages/Req';
 import Report from './Pages/Report';
   
@@ -43,6 +47,10 @@ function App() {
             <Route path="/CardiacArrest" element={<CardiacArrest/>}/>
             <Route path="/ChestPain" element={<ChestPain/>}/>
             <Route path="/AllergicReaction" element={<AllergicReaction/>}/>
+            <Route path="/Earace" element={<Earace/>}/>
+            <Route path="/Sob" element={<Sob/>}/>
+            <Route path="/Poisoning" element={<Poisoning/>}/>
+            <Route path="/Traumatic" element={<Traumatic/>}/>
         
           </Routes>
 

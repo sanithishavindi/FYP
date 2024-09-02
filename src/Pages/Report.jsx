@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Firebase from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
+import "./report.css";
 
 export default function Report  ()  {
 
@@ -56,36 +57,37 @@ export default function Report  ()  {
         }, []);
 
   return (
-    <div className='mt-32'>
-     <div >
-      <h1><b>Admin Reports</b></h1>
-      <h2>Generated Reports</h2>
-      <div className='mx-80'>
-        <table style={{ width: '100%', borderCollapse: 'collapse', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
-          <thead style={{ backgroundColor: '#f5f5f5', textAlign: 'left' }}>
-            <tr>
-              <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Patient Name</th>
-              <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Specialization</th>
-              <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Triage Level</th>
-              <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Health Issue</th>
-              <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Resources</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reports.map((report) => (
-              <tr key={report.id} style={{ backgroundColor: '#fff', transition: 'background-color 0.3s ease' }}>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{report.message}</td>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{report.specialization}</td>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{report.level}</td>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{report.healthIssue}</td>
-                <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{report.resources}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className='report-container mt-32 mx-80'>
+      <div className='report-header'>
+        <h1><b>Admin Reports</b></h1>
+        <h2>Generated Reports</h2>
       </div>
-    </div>
-    
+      <div className='report-list'>
+        {reports.map((report) => (
+          <div key={report.id} className='report-card'>
+            <div className='report-details'>
+              <h3>Patient Name</h3>
+              <p>{report.message}</p>
+            </div>
+            <div className='report-details'>
+              <h3>Specialization</h3>
+              <p>{report.specialization}</p>
+            </div>
+            <div className='report-details'>
+              <h3>Triage Level</h3>
+              <p>{report.level}</p>
+            </div>
+            <div className='report-details'>
+              <h3>Health Issue</h3>
+              <p>{report.healthIssue}</p>
+            </div>
+            <div className='report-details'>
+              <h3>Resources</h3>
+              <p>{report.resources}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
     
   )
