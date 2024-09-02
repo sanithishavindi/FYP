@@ -8,9 +8,10 @@ import Doctor from './Pages/Doctors';
 import Resources from './Pages/Resources';
 import Specialization from './Pages/Specialization';
 import Layout from './Components/Layout';
-import DengueFever from './Pages/DengueFever';
-import CardiacArrest from './Pages/CardiacArrest';
-import ChestPain from './Pages/ChestPain';
+import DengueFever from './Pages/Special/DengueFever';
+import CardiacArrest from './Pages/Special/CardiacArrest';
+import ChestPain from './Pages/Special/ChestPain';
+import AllergicReaction from './Pages/Special/AllergicReaction';
 import Req from './Pages/Req';
 import Report from './Pages/Report';
   
@@ -41,6 +42,7 @@ function App() {
             <Route path="/DengueFever" element={<DengueFever/>}/>
             <Route path="/CardiacArrest" element={<CardiacArrest/>}/>
             <Route path="/ChestPain" element={<ChestPain/>}/>
+            <Route path="/AllergicReaction" element={<AllergicReaction/>}/>
         
           </Routes>
 

@@ -1,165 +1,43 @@
 import React from 'react'
-// import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 
-// import DengueFever from './DengueFever';
 import { Link } from 'react-router-dom';
 import "./specialization.css";
 
 const Specialization = () => {
-  // const specializations = [
-  //   { title: 'Dengue Fever', description: 'Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.' },
-  //   { title: 'Cardiac Arrest', description: 'Cardiac arrest is a sudden loss of heart function, leading to a stop in blood flow to the rest of the body.' },
-  //   // Add more specializations as needed
-  // ];
+
+  const specializations = [
+    { title: 'Dengue Fever', description: 'Dengue is a viral infection spread by mosquitoes, common in tropical climates.', link: "/DengueFever" },
+    { title: 'Cardiac Arrest', description: 'Cardiac arrest is a sudden loss of heart function, leading to a stop in blood flow to the body.', link: "/CardiacArrest" },
+    { title: 'Chest Pain', description: 'Chest pain can be a symptom of various conditions, including heart problems.', link: "/ChestPain" },
+    { title: 'Allergic Reaction', description: 'An allergic reaction occurs when the immune system responds to a foreign substance.', link: "/AllergicReaction" },
+    { title: 'Earache/Toothache', description: 'Pain in the ear or tooth may indicate an infection or other health issues.', link: "#" },
+    { title: 'Shortness of Breath', description: 'Shortness of breath can be a symptom of underlying heart or lung conditions.', link: "#" },
+    { title: 'Poisoning', description: 'Poisoning occurs when harmful substances are ingested, inhaled, or come into contact with the skin.', link: "#" },
+    { title: 'Traumatic Injury', description: 'Traumatic injuries are sudden physical injuries that require immediate medical attention.', link: "#" },
+    { title: 'Dislocation', description: 'A dislocation is an injury where a bone is forced out of its joint.', link: "#" },
+    { title: 'Fracture', description: 'A fracture is a break in the bone, often caused by trauma or injury.', link: "#" },
+    { title: 'Snake Bite', description: 'A snake bite can cause serious injury or illness, depending on the type of snake.', link: "#" },
+    { title: 'Burns', description: 'Burns are tissue damage caused by heat, chemicals, electricity, or radiation.', link: "#" },
+  ];
+  
 
   return (
-    <div>
-      <div className='specialization-container mt-32'>
-        <h1 className='text-5xl font-bold text-center mb-16'><b>Specialization</b></h1>
-        </div>
-        <div className=" mx-80 grid grid-cols-4 gap-x-64">
-          
-            {/* <div>
-            <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-            </div> */}
-          <div className="specialization-card bg-white border border-gray-300 rounded-lg p-6  shadow-md hover:shadow-lg transform transition duration-300 ease-in-out w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dengue Fever</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        <Link to="/DengueFever">View Resources</Link>
-      </button>
-          </div>
-          
-      <div className="specialization-card bg-white border border-gray-300 rounded-lg p-4  shadow-md hover:shadow-lg transform transition duration-300 ease-in-out w-64 ">
-        <h3 className="mb-2 text-lg font-semibold">Cardiac Arrest</h3>
-        <p className="mb-4 text-gray-700 ">Cardiac arrest occurs when the heart suddenly and unexpectedly stops pumping.If this happens, blood stops flowing to the brain. </p>
-        <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        <Link to="/CardiacArrest">View Resources</Link>
-        </button>
-      </div>
-
-      <div className="specialization-card bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Chest Pain</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        <Link to="/ChestPain">View Resources</Link>
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Allergic Reaction</h3>
-          <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-          <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-         </button>
-         </div>
-
-         <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Earache/Toothache</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Short of breathing</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-      
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Poisoning</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Traumatic injury</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Dislocation</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Fracture</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Snake Bite</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-
-          <div className="bg-white border border-gray-300 rounded-lg p-4 m-4 shadow-md text-center w-64">
-          <h3 className="mb-2 text-lg font-semibold">Burns</h3>
-      <p className="mb-4 text-gray-700">Dengue (break-bone fever) is a viral infection that spreads from mosquitoes to people. It is more common in tropical and subtropical climates.</p>
-      <button className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700">
-        View Resources
-      </button>
-          </div>
-          
-      
-    </div>
-    {/* <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="flex flex-wrap gap-4">
+    <div className='mx-64'>
+    <div className="specialization-container mt-32 ">
+      <h1 className="text-5xl font-bold text-center mb-16"><b>Specialization</b></h1>
+      <div className="specialization-grid mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {specializations.map((spec, index) => (
-          <Specialization key={index} title={spec.title} description={spec.description} />
+          <div key={index} className="specialization-card">
+            <h3>{spec.title}</h3>
+            <p>{spec.description}</p>
+            <Link to={spec.link} className="specialization-button">View Resources</Link>
+          </div>
         ))}
       </div>
-    </div> */}
-    {/* <div className='mx-80'>
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        // sx={{ height: 140 }}
-        // image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
     </div>
-     */}
     </div>
+          
+    
     
   )
 }
