@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Firebase from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { deleteDoc, doc } from 'firebase/firestore';
+import { PrioRequests } from './PrioRequests';
 
 export default function Req ()  {
 
@@ -21,12 +22,18 @@ export default function Req ()  {
                 id: doc.id,
                 ...doc.data()
             }));
-            setRequests(newRequests);
+            const prioritizedRequests = PrioRequests(newRequests).sort((a, b) => a.level - b.level);
+            setRequests(prioritizedRequests);
+            // setRequests(newRequests);
             // Trigger popup notification
-            newRequests.forEach(request => {
-                // const lastRequest = newRequests[newRequests.length - 1];
-                alert(`New Request Received: \nMessage: ${request.message}\nSpecialization: ${request.specialization}\nLevel: ${request.level}`);
-            });
+            // newRequests.forEach(request => {
+            //     // const lastRequest = newRequests[newRequests.length - 1];
+            //     alert(`New Request Received: \nMessage: ${request.message}\nSpecialization: ${request.specialization}\nLevel: ${request.level}`);
+            // });
+            prioritizedRequests.forEach(request => {
+              alert(`New Request Received: \nMessage: ${request.message}\nSpecialization: ${request.specialization}\nLevel: ${request.level}`);
+          
+      });
         });
 
         const unsubscribeResources = onSnapshot(refResources, (snapshot) => {
