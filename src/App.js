@@ -22,6 +22,7 @@ import Dislocation from './Pages/Special/Dislocation';
 import Fracture from './Pages/Special/Fracture';
 import SnakeBite from './Pages/Special/SnakeBite';
 import Burns from './Pages/Special/Burns';
+import Availability from './Pages/Availability';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -59,6 +60,7 @@ function App() {
             <Route path="/Fracture" element={<Fracture/>}/>
             <Route path="/SnakeBite" element={<SnakeBite/>}/>
             <Route path="/Burns" element={<Burns/>}/>
+            <Route path="/Availability" element={<Availability/>}/>
         
           </Routes>
 

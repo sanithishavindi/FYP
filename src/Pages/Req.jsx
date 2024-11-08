@@ -3,11 +3,13 @@ import Firebase from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { PrioRequests } from './PrioRequests';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function Req ()  {
 
     const [requests, setRequests] = useState([]);
     const [resources, setResources] = useState([]);
+    const navigate = useNavigate();
     
 
     useEffect(() => {
@@ -77,6 +79,10 @@ export default function Req ()  {
         console.error("Error deleting request:", error);
         alert("Failed to delete the request.");
       }
+    };
+
+    const handleAvailability = (id) => {
+      navigate('/Availability'); 
     };
 
     const mergedData = getMergedData();
@@ -168,13 +174,31 @@ export default function Req ()  {
                       padding: '8px 12px',
                       borderRadius: '4px',
                       cursor: 'pointer',
-                      transition: 'background-color 0.3s ease'
+                      transition: 'background-color 0.3s ease',
+                      marginRight: '8px' // Adds space between buttons
                     }}
                     onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#d32f2f'}
                     onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#f44336'}
                   >
                     Delete
                   </button>
+
+                  <button
+                      onClick={() => handleAvailability(data.id)}
+                      style={{
+                        backgroundColor: '#4CAF50',
+                        color: '#fff',
+                        border: 'none',
+                        padding: '8px 12px',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        transition: 'background-color 0.3s ease'
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#388E3C'}
+                      onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#4CAF50'}
+                    >
+                      Availability
+                    </button>
                 </td>
               </tr>
             ))}
