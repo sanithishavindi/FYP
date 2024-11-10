@@ -61,12 +61,15 @@ const mapContainerStyle = {
   };
 
   const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value.toLowerCase());
   };
 
   const filteredHospitals = hospitals.filter(hospital =>
-    hospital.name.toLowerCase().includes(searchTerm.toLowerCase())
+    hospital.name.toLowerCase().includes(searchTerm)
   );
+
+  console.log("Search Term:", searchTerm);
+  console.log("Filtered Hospitals:", filteredHospitals);
 
     
       return (
