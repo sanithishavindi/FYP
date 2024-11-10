@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Firebase from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function Availability  ()  {
 
     const [departments, setDepartments] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
       const firebase = new Firebase();
@@ -103,6 +105,33 @@ export default function Availability  ()  {
         </table>
         </div>
       {/* </div> */}
+
+      <button
+                    style={{
+                        padding: '12px 24px',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color: '#fff',
+                        backgroundColor: '#4CAF50',
+                        border: 'none',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                        marginTop: '60px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                        transition: 'background-color 0.3s ease'
+                    }}
+                    onClick={() => {
+                        // Add your button click handler here
+                        alert("Navigating to nearest hospitals...");
+                        navigate('/Nearest');
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#45A049'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#4CAF50'}
+                >
+                    Check Nearest Hospitals
+                </button>
+
+
     </div>
     </div>
   );
