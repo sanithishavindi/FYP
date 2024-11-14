@@ -1,31 +1,49 @@
-import React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-// import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Checkbox from '@mui/material/Checkbox';
-// import Avatar from '@mui/material/Avatar';
-import { Box, Typography, Paper, Stack, IconButton } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Paper, Stack, IconButton, Checkbox, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import DoneIcon from '@mui/icons-material/Done';
 
 const Poisoning = () => {
-    const [checked, setChecked] = React.useState([1]);
+  const [checked, setChecked] = useState([]);
+  const [updateMessage, setUpdateMessage] = useState('');
 
-    const handleToggle = (value) => () => {
-      const currentIndex = checked.indexOf(value);
-      const newChecked = [...checked];
-  
-      if (currentIndex === -1) {
-        newChecked.push(value);
-      } else {
-        newChecked.splice(currentIndex,1);
-      }
-  
-      setChecked(newChecked);
-    };
-  
+  const resources = [
+    { name: 'Suction Machine', quantity: 2 },
+    { name: 'Crash Cart', quantity: 1 },
+    { name: 'Stethoscope', quantity: 3 },
+    { name: 'Sphygmomanometer', quantity: 4 },
+    { name: 'ECG Machine', quantity: 1 },
+    { name: 'Patient Monitor', quantity: 2 },
+    { name: 'Oxygen cylinder with regulator and mask kit', quantity: 3 },
+    { name: 'Ambu bag with oxygen', quantity: 1 },
+    { name: 'Surgical Masks', quantity: 10 },
+    { name: 'Surgical Gloves', quantity: 15 },
+    { name: 'Syringe pump', quantity: 2 }
+  ];
+
+  const handleToggle = (value) => () => {
+    const currentIndex = checked.indexOf(value);
+    const newChecked = [...checked];
+
+    if (currentIndex === -1) {
+      newChecked.push(value);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+
+    setChecked(newChecked);
+  };
+
+  const handleUpdate = () => {
+    const allMarked = resources.every(resource => checked.includes(resource.name));
+
+    if (allMarked) {
+      setUpdateMessage("All marked resources have been updated!");
+    } else {
+      setUpdateMessage("Please mark all resources needed before updating.");
+    }
+  };
+
   return (
     <Box sx={{ p: 4 }}>
       <Paper elevation={3} sx={{ p: 3, borderRadius: 4 }}>
@@ -36,34 +54,64 @@ const Poisoning = () => {
           <LocalHospitalIcon sx={{ fontSize: 48, color: 'green' }} />
         </Stack>
 
-        <List dense sx={{ mt: 4 }}>
-          {['Suction Machine', 'Crash Cart', 'Stethoscope', 'Sphygmomanometer', 'ECG Machine', 'Patient Monitor', 'Oxygen cylinder with regulator and mask kit', 'Ambu bag with oxygen', 'Surgical Masks', 'Surgical Gloves', 'Syringe pump'].map((value) => {
-            const labelId = `checkbox-list-secondary-label-${value}`;
-            return (
-              <ListItem
-                key={value}
-                secondaryAction={
-                  <Checkbox
-                    edge="end"
-                    onChange={handleToggle(value)}
-                    checked={checked.indexOf(value) !== -1}
-                    inputProps={{ 'aria-labelledby': labelId }}
-                    icon={<IconButton edge="end"><LocalHospitalIcon /></IconButton>}
-                    checkedIcon={<IconButton edge="end"><DoneIcon sx={{ color: 'green' }} /></IconButton>}
-                  />
-                }
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemText id={labelId} primary={value} sx={{ color: checked.indexOf(value) !== -1 ? 'green' : 'black' }} />
-                </ListItemButton>
-              </ListItem>
-            );
-          })}
-        </List>
+        <TableContainer component={Paper} sx={{ mt: 4 }}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: 16 }}>Resource</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: 16 }}>Quantity</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: 16 }}>Status</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: 16 }}>Mark Needed</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {resources.map((resource) => {
+                const isAvailable = resource.quantity > 0;
+                const checkedStatus = checked.includes(resource.name);
+
+                return (
+                  <TableRow key={resource.name}>
+                    <TableCell>{resource.name}</TableCell>
+                    <TableCell>{resource.quantity}</TableCell>
+                    <TableCell>
+                      <Typography sx={{ color: isAvailable ? 'green' : 'red', fontWeight: 'bold' }}>
+                        {isAvailable ? 'Available' : 'Low Stock'}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <Checkbox
+                        edge="end"
+                        onChange={handleToggle(resource.name)}
+                        checked={checkedStatus}
+                        icon={<IconButton edge="end"><LocalHospitalIcon /></IconButton>}
+                        checkedIcon={<IconButton edge="end"><DoneIcon sx={{ color: 'green' }} /></IconButton>}
+                      />
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+
+        <Stack direction="column" spacing={2} alignItems="center" sx={{ mt: 3 }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleUpdate}
+            sx={{ width: '200px', fontWeight: 'bold' }}
+          >
+            Update
+          </Button>
+          {updateMessage && (
+            <Typography sx={{ color: 'green', mt: 1, fontWeight: 'bold' }}>
+              {updateMessage}
+            </Typography>
+          )}
+        </Stack>
       </Paper>
     </Box>
-  )
+  );
 }
 
-export default Poisoning
+export default Poisoning;

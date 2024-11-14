@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Req ()  {
 
     const [requests, setRequests] = useState([]);
-    const [resources, setResources] = useState([]);
+    const [resources, setResources] = useState([]); 
     const navigate = useNavigate();
     
 
@@ -51,6 +51,8 @@ export default function Req ()  {
           unsubscribeResources();
         };
       }, []);
+
+      
 
     const getMergedData = () => {
       return requests.map(request => {
@@ -148,6 +150,7 @@ export default function Req ()  {
         <table style={{ width: '100%', borderCollapse: 'collapse', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
           <thead style={{ backgroundColor: '#f5f5f5', textAlign: 'left' }}>
             <tr>
+              
               <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Patient Name</th>
               <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Specialization</th>
               <th style={{ padding: '12px 15px', borderBottom: '2px solid #ddd' }}>Triage Level</th>
@@ -159,6 +162,7 @@ export default function Req ()  {
           <tbody>
             {mergedData.map((data) => (
               <tr key={data.id} style={{ backgroundColor: '#fff', transition: 'background-color 0.3s ease' }}>
+               
                 <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{data.message}</td>
                 <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{data.specialization}</td>
                 <td style={{ padding: '12px 15px', borderBottom: '1px solid #ddd' }}>{data.level}</td>
@@ -205,8 +209,11 @@ export default function Req ()  {
           </tbody>
         </table>
       </div>
+      
     </div>
     
   )
 }
+
+
 

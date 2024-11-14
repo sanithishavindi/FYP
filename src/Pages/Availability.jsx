@@ -3,10 +3,12 @@ import Firebase from '../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Availability  ()  {
 
     const [departments, setDepartments] = useState([]);
     const navigate = useNavigate();
+    
 
     useEffect(() => {
       const firebase = new Firebase();
@@ -24,6 +26,8 @@ export default function Availability  ()  {
         unsubscribe();
       };
     }, []);
+
+    
   
 
   return (
@@ -79,6 +83,7 @@ export default function Availability  ()  {
                         </tr>
                     </thead>
                     <tbody>
+                        
                         {departments.map((department) => (
                             <tr key={department.id} style={{ transition: 'background-color 0.3s ease' }}>
                                 <td style={{
