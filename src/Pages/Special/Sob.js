@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Box, Typography, Paper, Stack, IconButton, Checkbox, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import DoneIcon from '@mui/icons-material/Done';
+import { useNavigate } from 'react-router-dom';
 
 const ShortnessOfBreath = () => {
   const [checked, setChecked] = useState([]);
   const [updateMessage, setUpdateMessage] = useState('');
+  const navigate = useNavigate();
 
   const resources = [
     { name: 'Crash Cart (emergency drugs trolley)', quantity: 1 },
@@ -103,8 +105,30 @@ const ShortnessOfBreath = () => {
               {updateMessage}
             </Typography>
           )}
+         <Button
+    variant="contained"
+    onClick={() => navigate('/ResourceSummary')}
+    sx={{
+      backgroundColor: 'green',
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: '16px',
+      borderRadius: '8px',
+      padding: '10px 20px',
+      textTransform: 'none',
+      '&:hover': {
+        backgroundColor: 'darkgreen',
+      },
+      boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+      width: '250px', // To make it stand out
+    }}
+  >
+    View All Resources
+  </Button>
         </Stack>
+        
       </Paper>
+      
     </Box>
   );
 }

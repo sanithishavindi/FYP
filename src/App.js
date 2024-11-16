@@ -24,7 +24,7 @@ import SnakeBite from './Pages/Special/SnakeBite';
 import Burns from './Pages/Special/Burns';
 import Availability from './Pages/Availability';
 import Nearest from './Pages/Nearest';
-import ResourceList from './Pages/ResourceList';
+import ResourceSummary from './Pages/ResourceSummary';
   
 // import  Navbar  from './Components/Navbar/Navbar';
 // import {  BrowserRouter as  Switch } from 'react-router-dom';
@@ -64,7 +64,8 @@ function App() {
             <Route path="/Burns" element={<Burns/>}/>
             <Route path="/Availability" element={<Availability/>}/>
             <Route path="/Nearest" element={<Nearest/>}/>
-            <Route path="/ResourceList" element={<ResourceList/>}/>
+            <Route path="/ResourceSummary" element={<ResourceSummary/>}/>
+        
         
           </Routes>
 
