@@ -71,24 +71,32 @@ export default function Report  ()  {
           <div key={report.id} className='report-card'>
             <div className='report-details'>
               <h3>Patient Name</h3>
-              <p>{report.message}</p>
+              <p className='report-field' >{report.message}</p>
             </div>
             <div className='report-details'>
               <h3>Specialization</h3>
-              <p>{report.specialization}</p>
+              <p >{report.specialization}</p>
             </div>
             <div className='report-details'>
               <h3>Triage Level</h3>
-              <p>{report.level}</p>
+              <p className={`report-field ${report.level === "High" ? "high-level" : "normal-level"}`}>{report.level}</p>
             </div>
             <div className='report-details'>
               <h3>Health Issue</h3>
               <p>{report.healthIssue}</p>
             </div>
-            <div className='report-details'>
-              <h3>Resources</h3>
-              <p>{report.resources}</p>
-            </div>
+            <div className="report-details">
+  <h3>Resources</h3>
+  {report.resources && Array.isArray(report.resources) ? (
+    <ul className="resource-list">
+      {report.resources.map((resource, index) => (
+        <li key={index} className="resource-item">{resource}</li>
+      ))}
+    </ul>
+  ) : (
+    <p className="no-resources">No resources available</p>
+  )}
+</div>
           </div>
         ))}
       </div>
