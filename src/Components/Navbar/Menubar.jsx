@@ -115,7 +115,7 @@ export const Menubar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem> */}
       <MenuItem onClick={handleSignOut}>Sign Out</MenuItem>
     </Menu>
   );
